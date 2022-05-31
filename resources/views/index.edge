@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" href="/public/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Sailing Logbook</title>
+
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="The Ultimate Sailing Logbook">
+		<meta property="og:description" content="The go-to online logbook for advanced sailors all over the world!">
+		<meta property="og:image" content="./../public/logo.png">
+
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+		<link rel="stylesheet" src="{{ asset('assets/base.css') }}">
+	</head>
+	<body>
+
+		<noscript>
+			<strong
+				>We're sorry but the Sailing Log doesn't
+				work properly without JavaScript enabled. Please enable it to
+				continue.</strong
+			>
+		</noscript>
+
+		<div id="app"></div>
+		<script type="module" src="{{ asset('assets/main.js') }}"></script>
+
+	</body>
+</html>
