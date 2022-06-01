@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="The Captain's Log!" />
+    <meta
+      property="og:description"
+      content="No matter whether you are a pleasure boater or professional skipper, log your sailing trips like never before with Captain's Loghttps://logbook.liamskinner.co.uk/. With unlimited storage and high-tech waterproofing capabilities, Captain's Log is revolutionising the logbook field."
+    />
+    <meta property="og:image" content="{{ asset('assets/images/logo.png') }}" />
+
+    <title>Captain's Log</title>
+
+    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}" type="image/x-icon" />
+    <link rel="stylesheet" href="{{ asset('assets/app.css') }}" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <script src="{{ asset('assets/app.js') }}" type="module"></script>
+  </head>
+  <body>
+    <noscript>
+      <div class="animation-wrapper">
+        
+        <div class="water">
+          <ul class="waves">
+            <li
+              class="wave-one"
+              style="background-image: url('https://i.postimg.cc/7LtCC11Y/wave1.png')"
+            ></li>
+            <li
+              class="wave-two"
+              style="background-image: url('https://i.postimg.cc/P5hv05rh/wave2.png')"
+            ></li>
+            <li
+              class="wave-three"
+              style="background-image: url('https://i.postimg.cc/63Dyc91k/wave3.png')"
+            ></li>
+            <li
+              class="wave-four"
+              style="background-image: url('https://i.postimg.cc/1tg8DgM0/wave4.png')"
+            ></li>
+          </ul>
+        </div>
+        <div
+          class="boat"
+          style="background-image: url('https://i.postimg.cc/GmQTRnHD/boat2.png')"
+        ></div>
+        <div
+          class="cloud"
+          style="background-image: url('https://i.postimg.cc/VNkrLZCV/cloud-md.png')"
+        ></div>
+        <div
+          class="cloud2"
+          style="background-image: url('https://i.postimg.cc/VNkrLZCV/cloud-md.png')"
+        ></div>
+        <div class="noscript-text-container">
+          <div class="noscript-text">
+            <p>
+              <strong>Captain's Log</strong> requires JavaScript to be enabled in
+              your browser.
+            </p>
+            <p>
+              Please enable JavaScript and reload the page.
+            </p>
+          </div>
+      </div>
+    </noscript>
+    
+    <!-- Sidebar Start -->
+      
+    <!-- Sidebar End -->
+
+    <footer id='footer' class='footer'>
+
+      <div class="footer-left">
+    
+        <div>
+          <img class='logo' alt="logo" src="{{ asset('assets/images/logo.png') }}">
+          <h3>Sailing Logbook</h3>
+        </div>
+      
+        <p class="footer-links">
+          <a href="#">Home</a>
+          ·
+          <a href="#">Blog</a>
+          ·
+          <a href="#">Pricing</a>
+          ·
+          <a href="#">About</a>
+          ·
+          <a href="#">Faq</a>
+          ·
+          <a href="#">Contact</a>
+        </p>
+    
+        <p class="footer-company-name">Liam Skinner © 2022</p>
+        <div class="footer-icons">
+          <a rel="noreferrer" target="_blank" href="https://twitter.com/ThatsLiamS"><i class="bi bi-twitter"></i></a>
+          <a rel="noreferrer" target="_blank" href="https://discord.com/invite/2je9aJynqt"><i class="bi bi-discord"></i></a>
+          <a rel="noreferrer" target="_blank" href="https://github.com/ThatsLiamS"><i class="bi bi-github"></i></a>
+    
+        </div>
+    
+      </div>
+    
+      <div class="footer-right">
+    
+        <p>Contact Us</p>
+    
+        <form v-on:submit.prevent="">
+    
+          <input type="text" name="email" v-model="email" placeholder="Email">
+          <textarea name="message" v-model="message" placeholder="Message"></textarea>
+          <button type="submit" class="sendButton" value="Send">Send</button>
+    
+        </form>
+    
+      </div>
+    
+    </footer>
+  </body>
+</html>
