@@ -2,18 +2,18 @@
   "entrypoints": {
     "main": {
       "css": [
-        "/assets/main.18009202.css"
+        "http://localhost:8080/assets/main.css"
       ],
       "js": [
-        "/assets/main.fea77879.js"
+        "http://localhost:8080/assets/main.js"
       ]
     },
     "base": {
       "css": [
-        "/assets/base.b8d722b3.css"
+        "http://localhost:8080/assets/base.css"
       ],
       "js": [
-        "/assets/base.31d6cfe0.js"
+        "http://localhost:8080/assets/base.js"
       ]
     }
   }

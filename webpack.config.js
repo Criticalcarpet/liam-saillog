@@ -46,7 +46,7 @@ Encore.setPublicPath('/assets')
 |
 */
 Encore.addEntries({
-  main: './resources/vue/main.js',
+  main: './resources/js/main.js',
   base: './resources/css/base.css',
 })
 
@@ -173,7 +173,7 @@ Encore.configureDevServerOptions((options) => {
 |
 */
 // Encore.enablePostCssLoader()
-// Encore.configureCssLoader(() => {})
+Encore.configureCssLoader(() => {})
 
 /*
 |--------------------------------------------------------------------------
@@ -186,7 +186,7 @@ Encore.configureDevServerOptions((options) => {
 */
 Encore.enableVueLoader(() => {}, {
   version: 3,
-  runtimeCompilerBuild: false,
+  runtimeCompilerBuild: true,
   useJsx: false,
 })
 
