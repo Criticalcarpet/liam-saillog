@@ -1,3 +1,9 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
 /* NoScript Ocean theme start */
 
 
@@ -182,10 +188,10 @@
 /* Footer Start */
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
-
+/* 
 * {
-	font-family: Roboto;
-}
+	font-family: "Roboto";
+} */
 
 .footer {
 	background: #444;
@@ -427,3 +433,160 @@ section {
 }
 
 /* Footer End */
+
+/* sidebar */
+body {
+	display: grid;
+	grid-template-columns: minmax(275px, 20%) 1fr;
+	min-height: 100vh;
+}
+.sidebar {
+	--sidebar-primary: hsl(240, 5%, 17%);
+	--sidebar-heading-clr: hsla(0, 0%, 100%, 0.7);
+	--sidebar-list-hover-clr: hsla(240, 5%, 12%, 0.5);
+
+	--sidebar-icon-bg: hsl(240, 5%, 12%);
+	--sidebar-toggle-btn-bg: hsl(240, 5%, 12%);
+	--sidebar-active-indicator-bg: #4285f4;
+
+	--sidebar-primary-gap: .95em;
+	--sidebar-primary-gap-half: calc(var(--sidebar-primary-gap) / 2);
+	--sidebar-primary-gap-2x: calc(var(--sidebar-primary-gap) * 1.75)
+}
+
+.sidebar {
+	background-color: var(--sidebar-primary);
+	color: white;
+	max-height: 100vh;
+	transition: width 400ms;
+	width: 100%;
+	white-space: nowrap;
+}
+.sidebar_mode_compact {
+	width: 4em;
+	--sidebar-primary-gap: .8em;
+}
+.sidebar_mode_compact .sidebar__main {
+	padding-top: 0;
+	overflow: initial;
+}
+
+.sidebar_mode_compact .sidebar__section-heading, 
+.sidebar_mode_compact .sidebar-list__item span > span{
+	display: none;
+}
+.sidebar_mode_compact .sidebar-list__item i {
+	margin: 0;
+}
+.sidebar, .sidebar a, .sidebar button {
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	color: white;
+}
+.sidebar a, .sidebar button {
+	text-decoration: none;
+	font-weight: 500;
+}
+.sidebar__wrapper {
+	display: grid;
+	grid-template-rows: 1fr max-content;
+}
+.sidebar__wrapper, .sidebar__main  {
+	height: 100%;
+}
+.sidebar__main {
+	display: flex;
+	flex-direction: column;
+	gap: var(--sidebar-primary-gap);
+	overflow-y: overlay;
+	padding-top: var(--sidebar-primary-gap-half)
+}
+.sidebar__section {
+	display: flex;
+	flex-direction: column;
+	gap: var(--primary-gap);
+}
+.sidebar__section-divider {
+	padding-inline: var(--sidebar-primary-gap);
+	margin-bottom: var(--sidebar-primary-gap=half)
+}
+.sidebar__section-divider > hr {
+	border-color: rgba(0, 0, 0, 0.1);
+}
+.sidebar__section-heading {
+	color: var(--sidebar-heading-clr);
+	font-weight: 600;
+	font-size: clamp(.8rem, 1.5vw, 1rem);
+	text-transform: uppercase;
+	padding-inline: var(--sidebar-primary-gap);
+	margin-bottom: var(--sidebar-primary-gap)
+}
+.sidebar-list {
+	list-style-type: none;
+}
+.sidebar-list__item {
+	user-select: none;
+	position: relative;
+}
+.sidebar-list__item > a, .sidebar-list__item > span {
+	display: inline-block;
+	width: 100%;
+	padding: var(--sidebar-primary-gap);
+	cursor: pointer;
+	transition: 250ms background;
+}
+.sidebar-list__item_active {
+	box-shadow: inset .2em 0 0 var(--sidebar-active-indicator-bg);
+}
+.sidebar-list__item_mode_compact > a > span {
+	display: inline-block;
+	width: calc(max(40vw, 60em) / 4);
+	position: absolute;
+	right: 100%;
+	top: 50%;
+	transform: translateY(-50%);
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: var(--sidebar-active-indicator-bg);
+	transition: transform 300ms linear, color 300ms 200ms;
+	color: transparent;
+}
+.sidebar-list__item_mode_compact > a:hover > span {
+	transform: translate(100%, -50%);
+	color: inherit;
+}
+.sidebar-list__item_mode_compact > a:hover > i {
+	z-index: 2;
+	background-color: var(--sidebar-active-indicator-bg);
+}
+.sidebar-list__item > a:hover {
+	background-color: var(--sidebar-list-hover-clr)
+}
+.sidebar-list__item_disabled {
+	opacity: .4;
+    user-select: none;
+}
+.sidebar-list__item_disabled > a, 
+.sidebar-list__item_disabled > span {
+	cursor: not-allowed;
+}
+.sidebar-list__item i {
+	position: relative;
+	background-color: var(--sidebar-icon-bg);
+	width: 2em;
+	height: 2em;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: var(--sidebar-primary-gap-half);
+}
+
+.sidebar__toggle-btn {
+	padding: var(--sidebar-primary-gap-2x) var(--sidebar-primary-gap);
+	width: 100%;
+	border: 0;
+	background: var(--sidebar-toggle-btn-bg);
+	cursor: pointer;
+	user-select: none;
+}
