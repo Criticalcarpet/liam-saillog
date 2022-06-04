@@ -68,7 +68,46 @@
     </noscript>
     
     <!-- Sidebar Start -->
-      
+    <nav>
+      <ul>
+          <li>
+              <a class="toggle">
+                  <span class="icon"><i class="bi bi-view-list"></i></span>
+                  <span class="title">Menu</span>
+              </a>
+          </li>
+          <li>
+              <a href="#">
+                  <span class="icon"><i class="bi bi-plus-circle"></i></span>
+                  <span class="title">Dashboard</span>
+              </a>
+          </li>
+          <li>
+              <a href="#">
+                  <span class="icon"><i class="bi bi-person-circle"></i></span>
+                  <span class="title">My account</span>
+              </a>
+          </li>
+          <li>
+              <a href="#">
+                  <span class="icon"><i class="bi bi-shield-exclamation"></i></span>
+                  <span class="title">Privacy Policy</span>
+              </a>
+          </li>
+          <li>
+              <a href="#">
+                  <span class="icon"><i class="bi bi-journal-text"></i></span>
+                  <span class="title">Terms of service</span>
+              </a>
+          </li>
+          <li class="signout">
+              <a href="#">
+                  <span class="icon"><i class="bi bi-box-arrow-right"></i></span>
+                  <span class="title">Sign Out</span>
+              </a>
+          </li>
+      </ul>
+  </nav>
     <!-- Sidebar End -->
 
     <footer id='footer' class='footer'>
@@ -108,7 +147,7 @@
     
         <p>Contact Us</p>
     
-        <form v-on:submit.prevent="">
+        <form >
     
           <input type="text" name="email" v-model="email" placeholder="Email">
           <textarea name="message" v-model="message" placeholder="Message"></textarea>
