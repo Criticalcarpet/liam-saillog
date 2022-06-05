@@ -13,9 +13,11 @@
 
     <title>Captain's Log</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}" type="image/x-icon" />
     <link rel="stylesheet" href="{{ asset('assets/app.css') }}" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
   </head>
   <body>
     <noscript>
@@ -73,35 +75,46 @@
             <div class="sidebar__section">
               <h2 class="sidebar__section-heading">Getting Started</h2>
               <ul class="sidebar-list">
-                <li class="sidebar-list__item sidebar-list__item_active">
-                  <a href="#">
+                <li class="sidebar-list__item">
+                  <a href="#" class="sidebar__page-link">
                     <i class="bi bi-github"></i>
                     <span>Github</span>
                   </a>
                 </li>
                 <li class="sidebar-list__item">
-                  <a href="#">
+                  <a href="#" class="sidebar__page-link">
                     <i class="bi bi-github"></i>
                     <span>Github</span>
                   </a>
                 </li>
                 <li class="sidebar-list__item">
-                  <a href="#">
+                  <a href="#" class="sidebar__page-link">
                     <i class="bi bi-github"></i>
                     <span>Github</span>
                   </a>
                 </li>
                 <li class="sidebar-list__item">
-                  <a href="#">
+                  <a href="#" class="sidebar__page-link">
                     <i class="bi bi-github"></i>
                     <span>Github</span>
                   </a>
                 </li>
-                <li class="sidebar-list__item">
-                  <a href="#">
+                <li class="sidebar-list__item  sidebar-list__item_active">
+                  <a href="#" class="sidebar__page-link" data-dropdown="close">
                     <i class="bi bi-github"></i>
                     <span>Github</span>
+                    <i class="bi bi-chevron-right dropdown-icon"></i>
                   </a>
+                  <div class="dropdown-container" style="--item-counts: 1">
+                    <ul class="sidebar-list">
+                      <li class="sidebar-list__item">
+                        <a href="#" class="sidebar__page-link">
+                          <i class="bi bi-github"></i>
+                          <span>Github</span>
+                        </a>
+                        </li>
+                      </ul>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -117,15 +130,37 @@
                     <span>Github Disabled</span>
                   </span>
                 </li>
-                <li class="sidebar-list__item">
-                  <a href="#">
+                <li class="sidebar-list__item" >
+                  <a href="#" class="sidebar__page-link">
                     <i class="bi bi-github"></i>
                     <span>Github</span>
                   </a>
                 </li>
+                <li class="sidebar-list__item ">
+                  <a href="#" class="sidebar__page-link" data-dropdown="close">
+                    <i class="bi bi-github"></i>
+                    <span>Github</span>
+                    <i class="bi bi-chevron-right dropdown-icon"></i>
+                  </a>
+                  <div class="dropdown-container" style="--item-counts: 2">
+                    <ul class="sidebar-list">
+                      <li class="sidebar-list__item">
+                        <a href="#" class="sidebar__page-link">
+                          <i class="bi bi-github"></i>
+                          <span>Github</span>
+                        </a>
+                        </li>
+                      <li class="sidebar-list__item">
+                        <a href="#" class="sidebar__page-link">
+                          <i class="bi bi-github"></i>
+                          <span>Github</span>
+                        </a>
+                        </li>
+                      </ul>
+                  </div>
+                </li>
               </ul>
             </div>
-             
           </div>
           <div class="sidebar__secondary">
             <button class="sidebar__toggle-btn">|&lt;</button>
