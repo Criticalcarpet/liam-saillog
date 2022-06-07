@@ -7,6 +7,14 @@
       "js": [
         "http://localhost:8080/assets/app.js"
       ]
+    },
+    "auth-login": {
+      "css": [
+        "http://localhost:8080/assets/auth-login.css"
+      ],
+      "js": [
+        "http://localhost:8080/assets/auth-login.js"
+      ]
     }
   }
 }

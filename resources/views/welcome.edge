@@ -13,9 +13,13 @@
 
     <title>Captain's Log</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}" type="image/x-icon" />
     <link rel="stylesheet" href="{{ asset('assets/app.css') }}" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+
     <script src="{{ asset('assets/app.js') }}" type="module"></script>
   </head>
   <body>
@@ -68,46 +72,105 @@
     </noscript>
     
     <!-- Sidebar Start -->
-    <nav>
-      <ul>
-          <li>
-              <a class="toggle">
-                  <span class="icon"><i class="bi bi-view-list"></i></span>
-                  <span class="title">Menu</span>
-              </a>
-          </li>
-          <li>
-              <a href="#">
-                  <span class="icon"><i class="bi bi-plus-circle"></i></span>
-                  <span class="title">Dashboard</span>
-              </a>
-          </li>
-          <li>
-              <a href="#">
-                  <span class="icon"><i class="bi bi-person-circle"></i></span>
-                  <span class="title">My account</span>
-              </a>
-          </li>
-          <li>
-              <a href="#">
-                  <span class="icon"><i class="bi bi-shield-exclamation"></i></span>
-                  <span class="title">Privacy Policy</span>
-              </a>
-          </li>
-          <li>
-              <a href="#">
-                  <span class="icon"><i class="bi bi-journal-text"></i></span>
-                  <span class="title">Terms of service</span>
-              </a>
-          </li>
-          <li class="signout">
-              <a href="#">
-                  <span class="icon"><i class="bi bi-box-arrow-right"></i></span>
-                  <span class="title">Sign Out</span>
-              </a>
-          </li>
-      </ul>
-  </nav>
+      <aside class="sidebar">
+        <div class="sidebar__wrapper">
+          <div class="sidebar__main">
+            <div class="sidebar__section">
+              <h2 class="sidebar__section-heading">Sailing Log</h2>
+              <ul class="sidebar-list">
+                <li class="sidebar-list__item">
+                  <a href="#" class="sidebar__page-link">
+                    <i class="bi bi-plus-circle"></i>
+                    <span>Dashboard</span>
+                  </a>
+                </li>
+                <li class="sidebar-list__item">
+                  <a href="#" class="sidebar__page-link">
+                    <i class="bi bi-person-circle"></i>
+                    <span>My Account</span>
+                  </a>
+                </li>
+                <li class="sidebar-list__item">
+                  <a href="#" class="sidebar__page-link">
+                    <i class="bi bi-box-arrow-right"></i>
+                    <span>Sign Out</span>
+                  </a>
+                </li>
+                <li class="sidebar-list__item">
+                  <a href="#" class="sidebar__page-link">
+                    <i class="bi bi-shield-exclamation"></i>
+                    <span>Privacy Policy</span>
+                  </a>
+                </li>
+                <li class="sidebar-list__item">
+                  <!--<a href="#" class="sidebar__page-link" data-dropdown="close">-->
+                  <a href="#" class="sidebar__page-link">
+                    <i class="bi bi-journal-text"></i>
+                    <span>Terms Of Service</span>
+                    <!--<i class="bi bi-chevron-right dropdown-icon"></i>-->
+                  </a>
+                  <!--<div class="dropdown-container" style="--item-counts: 1">
+                    <ul class="sidebar-list">
+                      <li class="sidebar-list__item">
+                        <a href="#" class="sidebar__page-link">
+                          <i class="bi bi-github"></i>
+                          <span>Github</span>
+                        </a>
+                        </li>
+                      </ul>
+                  </div>-->
+                </li>
+              </ul>
+            </div>
+            <!--<div class="sidebar__section sidebar__section-divider" aria-hidden="true">
+              <hr>
+            </div>-->
+             <!--<div class="sidebar__section">
+              <h2 class="sidebar__section-heading">Bbye there</h2>
+              <ul class="sidebar-list">
+                <li class="sidebar-list__item sidebar-list__item_disabled">
+                  <span>
+                    <i class="bi bi-github"></i>
+                    <span>Github Disabled</span>
+                  </span>
+                </li>
+                <li class="sidebar-list__item" >
+                  <a href="#" class="sidebar__page-link">
+                    <i class="bi bi-github"></i>
+                    <span>Github</span>
+                  </a>
+                </li>
+                <li class="sidebar-list__item ">
+                  <a href="#" class="sidebar__page-link" data-dropdown="close">
+                    <i class="bi bi-github"></i>
+                    <span>Github</span>
+                    <i class="bi bi-chevron-right dropdown-icon"></i>
+                  </a>
+                  <div class="dropdown-container" style="--item-counts: 2">
+                    <ul class="sidebar-list">
+                      <li class="sidebar-list__item">
+                        <a href="#" class="sidebar__page-link">
+                          <i class="bi bi-github"></i>
+                          <span>Github</span>
+                        </a>
+                        </li>
+                      <li class="sidebar-list__item">
+                        <a href="#" class="sidebar__page-link">
+                          <i class="bi bi-github"></i>
+                          <span>Github</span>
+                        </a>
+                        </li>
+                      </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>-->
+          </div>
+          <div class="sidebar__secondary">
+            <button class="sidebar__toggle-btn">|&lt;</button>
+          </div>
+        </div>
+      </aside>
     <!-- Sidebar End -->
 
     <footer id='footer' class='footer'>
@@ -147,7 +210,7 @@
     
         <p>Contact Us</p>
     
-        <form >
+        <form v-on:submit.prevent="">
     
           <input type="text" name="email" v-model="email" placeholder="Email">
           <textarea name="message" v-model="message" placeholder="Message"></textarea>

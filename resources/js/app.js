@@ -1,12 +1,35 @@
 import '../css/app.css'
 
-let getSidebar = document.querySelector('nav')
-let getToggle = document.getElementsByClassName('toggle')
+const SIDEBAR = document.querySelector('.sidebar')
+const SIDEBAR_TOGGLE_BTN = document.querySelector('.sidebar__toggle-btn')
+const SIDEBAR_LIST_ITEMS = document.querySelectorAll(
+  ':not(.dropdown-container)> .sidebar-list > .sidebar-list__item'
+)
+const SIDEBAR_DROPDOWNS_INITIATORS = document.querySelectorAll(
+  '.sidebar-list__item > .sidebar__page-link[data-dropdown]'
+)
 
-if (getToggle.length > 0) {
-  for (let i = 0; i < getToggle.length; i++) {
-    getToggle[i].addEventListener('click', function () {
-      getSidebar.classList.toggle('active')
-    })
+SIDEBAR_TOGGLE_BTN.addEventListener('click', () => {
+  SIDEBAR.classList.toggle('sidebar_mode_compact')
+  if (SIDEBAR.classList.contains('sidebar_mode_compact')) {
+    SIDEBAR_TOGGLE_BTN.textContent = '>|'
+    SIDEBAR_LIST_ITEMS.forEach((item) => item.classList.add('sidebar-list__item_mode_compact'))
+  } else {
+    SIDEBAR_TOGGLE_BTN.textContent = '|<'
+    SIDEBAR_LIST_ITEMS.forEach((item) => item.classList.remove('sidebar-list__item_mode_compact'))
   }
-}
+})
+
+SIDEBAR_DROPDOWNS_INITIATORS.forEach((initiator) => {
+  initiator.addEventListener('click', (e) => {
+    if (SIDEBAR.classList.contains('sidebar_mode_compact')) return
+    const openedDropdown = document.querySelector("[data-dropdown='open']")
+    if (openedDropdown) openedDropdown.dataset.dropdown = 'close'
+
+    if (e.currentTarget != openedDropdown) {
+      e.currentTarget.dataset.dropdown == 'open'
+        ? (e.currentTarget.dataset.dropdown = 'close')
+        : (e.currentTarget.dataset.dropdown = 'open')
+    }
+  })
+})

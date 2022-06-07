@@ -46,7 +46,8 @@ Encore.setPublicPath('/assets')
 |
 */
 Encore.addEntries({
-  app: './resources/js/app.js',
+  'app': './resources/js/app.js',
+  'auth-login': './resources/js/auth/login.js',
 })
 
 /*

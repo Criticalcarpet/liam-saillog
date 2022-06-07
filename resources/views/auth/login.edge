@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/public/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href=" {{ asset('assets/auth-login.css') }} ">
+
+    <script src="{{ asset('assets/auth-login.js') }}" type="module"></script>
+  </head>
+
+  <body>
+    <noscript>
+      <strong>
+        We're sorry but the Sailing Log doesn't work properly without JavaScript enabled. Please
+        enable it to continue.
+      </strong>
+    </noscript>
+
+    <section class="ftco-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-7 col-lg-5">
+            <div class="login-wrap p-4 p-md-5">
+              <div class="icon d-flex align-items-center justify-content-center">
+                <i class="bi bi-person-plus"></i>
+              </div>
+              <h3 class="text-center mb-4">Log In</h3>
+              <form onsubmit="return false" class="login-form">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    id="emailField"
+                    class="form-control rounded-left"
+                    placeholder="Email"
+                  />
+                  <p id="emailError" class="fieldError invisible">Standard error message.</p>
+                </div>
+                <div class="form-group">
+                  <input
+                    type="password"
+                    id="passwordField"
+                    class="form-control rounded-left"
+                    placeholder="Password"
+                  />
+                  <p id="passwordError" class="fieldError invisible">Standard error message.</p>
+                </div>
+                <div class="form-group">
+                  <button
+                    type="submit"
+                    onClick="onSubmit()"
+                    class="form-control btn btn-primary rounded submit px-3"
+                  >
+                    Login
+                  </button>
+                </div>
+                <div class="form-group d-md-flex">
+                  <div class="w-50 text-md-left">
+                    <a href="/signup">Create an Account</a>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
